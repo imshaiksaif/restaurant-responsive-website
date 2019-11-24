@@ -106,6 +106,11 @@ main h3 {
     font-size: 2.5em;
 }
 
+.go-down > a {
+    color: #F8A22F !important;
+    
+}
+
 /* Cart-items page  */
 .background-image-2 {
     position: absolute;
@@ -192,6 +197,33 @@ li > * {
     height: 480px;
 }
 
+.cart ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cart ul li p {
+    flex-grow: 2;
+}
+.cart ul li img {
+    width: 80px;
+}
+.cart .headings {
+    align-self: flex-start;
+    padding: 0;
+    margin: 20px auto;
+}
+
+ul {
+    margin: 10px 30px 10px 0;
+}
+
+
+.cart {
+   background-color: #fff;
+}
+
+
 .cart .total {
     justify-self: flex-end;
     background-color: #F8A22F;
@@ -221,3 +253,6 @@ li > * {
     justify-content: space-between;
 }
 
+.select {
+    background-color: #F8A22F;
+}

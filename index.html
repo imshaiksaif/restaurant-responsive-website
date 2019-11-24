@@ -37,31 +37,33 @@
                 <a href="#"><i class="fab fa-instagram"></i></a>
             </div>
         </main>
-        <span class="go-down">
+        <span class="go-down"><a href="#items">
              <i class="fas fa-arrow-circle-down"></i>
+            </a>
         </span>
     </div>
     <div class="background-image-2"></div>
     <div class="background-image-3"></div>
-    <div class="items-page">
+    <div class="items-page" id="items">
         <div class="options">
             <h4 class="headings">Available options</h4>
             <ul>
-                <li>
+                <li class="pizza">
                     <img src="./assets/imgs/pizza.jpg" alt="">
                     <p>Pizza</p>
                     <span>$5.99</span>
                 </li>
-                <li>
+                <li class="burger">
                     <img src="./assets/imgs/hamburger.jpg" alt="">
                     <p>Burger</p>
                     <span>$2.99</span>
-                </li>                <li>
+                </li>               
+                <li class="pasta">
                     <img src="./assets/imgs/pasta.jpg" alt="">
                     <p>Chicken Pasta</p>
                     <span>$4.99</span>
                 </li>
-                <li>
+                <li class="sandwich">
                     <img src="./assets/imgs/sandwich.jpg" alt="">
                     <p>Grilled Sandwich</p>
                     <span>$1.99</span>
@@ -69,25 +71,32 @@
             </ul>
         </div>
         <div class="buttons">
-            <button class="btn center">Add to cart >></button>
-            <button class="btn center"> << Remove from cart </button>
+            <button onclick="display()" class="btn center">Add to cart >></button>
+            <button onclick="deleteItems()" class="btn center"> << Remove from cart </button>
         </div>
-        <div class="cart options">
-            <div class="no-items">
+        <div class="cart">
+            <div class="no-items hide">
                 <h4>Your cart is empty</h4>
                 <p>Select an item and click "Add to cart"</p>
             </div>
-                <h4 class="headings hide">Your Cart</h4>
-                <div class="total orange hide">
-                    <span class="hide">
+                <h4 class="headings ">Your Cart</h4>
+                <ul>
+
+                </ul>
+                <div class="total orange ">
+                    <span class="">
                         Total Amount
                     </span>
-                    <span class="total-amount hide">
+                    <span class="total-amount ">
                         $ 0.0
                     </span>
                 </div>
         </div>
     </div>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
     <script src="./assets/js/main.js"></script>
 </body>
 </html>

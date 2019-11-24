@@ -195,6 +195,7 @@ li > * {
     justify-content: space-between;
     width: 380px;
     height: 480px;
+    overflow: auto;
 }
 
 .cart ul li {

@@ -72,7 +72,7 @@
         </div>
         <div class="buttons">
             <button onclick="display()" class="btn center">Add to cart >></button>
-            <button onclick="deleteItems()" class="btn center"> << Remove from cart </button>
+            <button onclick="removeFromArray(itemId)" class="btn center"> << Remove from cart </button>
         </div>
         <div class="cart">
             <div class="no-items hide">
@@ -80,7 +80,7 @@
                 <p>Select an item and click "Add to cart"</p>
             </div>
                 <h4 class="headings ">Your Cart</h4>
-                <ul>
+                <ul id="ul-items">
 
                 </ul>
                 <div class="total orange ">

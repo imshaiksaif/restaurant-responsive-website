@@ -1,51 +1,52 @@
 let itemsArray = [];
+let itemId;
+
+if(itemsArray.length == 0){
+    $('.cart > .no-items').removeClass("hide")
+    $('.cart >  h4').addClass("hide")
+    $('.cart > ul').addClass("hide")
+}
 
 $('.options > ul > li').click(function() {
 	var myClass = $(this).attr('class');
-	console.log(myClass);
 	addToArray(myClass);
 });
 
-// removeFromArray(myclass);
-function deleteItems() {
-	$('.cart > ul > li').click(function() {
-		var myClass = $(this).attr('class');
-		console.log(myClass);
-		removeFromArray(myClass);
-	});
-}
+$('#ul-items').on('click', 'li', function(e) {
+	var myId = $(this).attr('id');
+	itemId = myId;
+});
 
 function addToArray(className) {
 	let item = $('.' + className);
 	let newEle = item.clone();
-	console.log(newEle);
-	item.addClass('select');
 	itemsArray.push(newEle);
-	// item.removeClass("select")
-	// display();
 }
 
-function removeFromArray(className) {
+function removeFromArray(myId) {
 	for (let i = 0; i < itemsArray.length; i++) {
-		if (itemsArray[i][0].getAttribute('class').split(' ')[0] == className) {
+		if (itemsArray[i][0].getAttribute('id') == myId) {
 			itemsArray.splice(i, 1);
-			$('.' + className).remove();
+			$('#' + myId).remove();
+			display();
 			break;
 		}
 	}
-
-	display();
 }
 
 function display() {
+    if(itemsArray.length != 0){
+            $('.cart > .no-items').addClass("hide")
+            $('.cart >  h4').removeClass("hide")
+            $('.cart > ul').removeClass("hide")
+    }
 	let total = 0;
-	itemsArray.forEach((ele) => {
+	itemsArray.forEach((ele, i) => {
 		ele.removeClass('select');
+		ele.attr('id', i);
 		$('.cart > ul').append(ele);
 		total += parseFloat(ele.children('span').text().split('$')[1]);
 	});
 
 	$('.total-amount').html('$ ' + total);
 }
-
-console.log(itemsArray);
